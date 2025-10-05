@@ -6,7 +6,7 @@
 
 ## Start here / はじめに
 1. **Download Demo ZIP (JP/EN) – Latest release**  
-   👉 https://github.com/kodomonocc1/see_proto/releases/latest
+   👉 https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0
 2. **Open `README_FIRST.md` inside the ZIP**（手順はすべて ZIP 内に記載）  
 3. **Verify with `SHA256SUMS.txt` → run `python samples/quick_demo.py`**  
    （KPI：ratio/skip/bloom と p50/p95/p99 を表示）
