@@ -6,12 +6,12 @@
 - **KPI:** combined size ≈ **19.5%** of raw / present lookup **p50 ≈ 0.18 ms, p99 ≈ 0.34 ms**（demo）
 - **Site / Docs:** https://kodomonocc1.github.io/see_proto/
 - **Latest Release (Demo ZIP + Wheel + OnePager + SHA256):**  
-  https://github.com/kodomonocc1/see_proto/releases/latest
+  https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0
 
 ---
 
 ## Start here / はじめに（**ZIP 内 README を参照**）
-1. **Download the Demo ZIP (JP/EN)** from the [latest release](https://github.com/kodomonocc1/see_proto/releases/latest).  
+1. **Download the Demo ZIP (JP/EN)** from the [latest release](https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0).  
    **最新リリース**から **JP/EN のデモ ZIP** をダウンロード。
 2. **Open `README_FIRST.md` inside the ZIP** — all steps are there.  
    **ZIP 内の `README_FIRST.md`** に手順をすべて記載。
