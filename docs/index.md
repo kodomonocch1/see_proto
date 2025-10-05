@@ -1,9 +1,15 @@
 # SEE (Semantic Entropy Encoding)
-- JSON schema-aware compression; ms-level exists*/pos* lookups
-- KPI: combined≈0.195, present p50≈0.18ms
-- [OnePager (PDF)](../SEE_onepager.pdf) · [Release v0.1.0](../releases/tag/v0.1.0)
 
-## Try in 10 minutes
-1) `pip install see_proto --find-links https://github.com/kodomonocc1/see_proto/releases/download/v0.1.0/`
-2) Download **SEE_Proto_Windows_x64_v0.1.0_*.zip** (Assets) and unzip  
-3) `python samples/quick_demo.py`
+- **EN:** JSON schema-aware compression with **ms-level exists*/pos*** lookups  
+- **JP:** **ms級 exists*/pos*** ルックアップ対応の JSON スキーマアウェア圧縮  
+- **KPI:** combined ≈ **19.5%**, present **p50 ≈ 0.18 ms** (demo)
+
+## Start here / はじめに
+1. **Download Demo ZIP (JP/EN) – Latest release**  
+   👉 https://github.com/kodomonocc1/see_proto/releases/latest
+2. **Open `README_FIRST.md` inside the ZIP**（手順はすべて ZIP 内に記載）  
+3. **Verify with `SHA256SUMS.txt` → run `python samples/quick_demo.py`**  
+   （KPI：ratio/skip/bloom と p50/p95/p99 を表示）
+
+> Execution and verification are standardized in the ZIP (README_FIRST.md).  
+> 実行・検証は **ZIP 内 README_FIRST.md** に統一しています。
