@@ -1,0 +1,11 @@
+# Docs / generated / scripts → exclude from language stats
+docs/**                linguist-documentation
+metrics/**             linguist-documentation
+tools/**               linguist-vendored
+samples/**             linguist-vendored
+**/*.ps1               linguist-vendored
+**/*.psm1              linguist-vendored
+
+# Note:
+# - Real source files (e.g., *.rs, *.go, *.cc) will be counted normally.
+# - Do NOT re-label non-Rust files as Rust; inaccurate language tags are discouraged.
