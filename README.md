@@ -1,73 +1,74 @@
-# see_proto (SEE: Semantic Entropy Encoding)
+# SEE — Searchable JSON compression (Semantic Entropy Encoding)
+**combined ≈ 19.5% • lookup p50 ≈ 0.18 ms • skip ≈ 99%**  /  **圧縮後のまま検索可能（exists*/pos*）**
 
-**EN:** Schema-aware JSON compression that keeps data *searchable* (supports `exists*` / `pos*` lookups).  
-**JP:** JSON 向け **スキーマアウェア圧縮**。圧縮のまま *`exists*` / `pos*`* を検索可能。
+> **Why it matters / なぜ今“必要不可欠”か**  
+> 毎日発生するクラウドの**データ税（ストレージ＋エグレス）**と**CPU税（解凍＋JSONパース）**を同時に削減します。  
+> **Zstd よりさらに小さくない**場面はありますが、SEE は **検索可能性＋低I/O＋ランダムアクセス**を得るための設計です。  
+> 10分で KPI を再現できます。:contentReference[oaicite:1]{index=1}
 
-- **KPI:** combined size ≈ **19.5%** of raw / present lookup **p50 ≈ 0.18 ms, p99 ≈ 0.34 ms**（demo）
-- **Site / Docs:** https://kodomonocc1.github.io/see_proto/
-- **Latest Release (Demo ZIP + Wheel + OnePager + SHA256):**  
-  https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0
+<p>
+  <a href="https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0"><b>① Download (Release)</b></a> ・
+  <a href="https://github.com/kodomonocch1/see_proto/releases/download/v0.1.0/SEE_onepager.pdf"><b>② OnePager (ROI)</b></a> ・
+  <a href="#try-in-10-min"><b>③ Try in 10 min / 10分検証</b></a>
+</p>
 
----
-
-## Start here / はじめに（**ZIP 内 README を参照**）
-1. **Download the Demo ZIP (JP/EN)** from the [latest release](https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0).  
-   **最新リリース**から **JP/EN のデモ ZIP** をダウンロード。
-2. **Open `README_FIRST.md` inside the ZIP** — all steps are there.  
-   **ZIP 内の `README_FIRST.md`** に手順をすべて記載。
-3. **Verify integrity** with **`SHA256SUMS.txt`**, then run:  
-   `python samples/quick_demo.py` → KPIs (ratio/skip/bloom + p50/p95/p99) are printed.  
-   **`SHA256SUMS.txt`** で改ざん検証後、`python samples/quick_demo.py` を実行（KPI を表示）。
-
-> This repository’s README is only an entry point.  
-> 実行・検証の手順は **ZIP 内 `README_FIRST.md`** に統一しています。
+> **Enterprise (NDA inquiry)** → <a href="https://github.com/kodomonocch1/see_proto/discussions/categories/enterprise-nda-inquiry"><b>こちら</b></a>  
+> *Under NDA: VDR pack available.*
 
 ---
 
 ## What is SEE? / SEE の概要
-- **EN:** Searchable compression (structure × delta × Zstd + Bloom/Skip).  
-  Trades a little size for **I/O-skip** and **ms-level random access lookups**.
-- **JP:** 構造 × Δ × Zstd に **Bloom/Skip** を組み合わせた「**検索可能な圧縮**」。  
-  単純な最小サイズより **I/O スキップ**と**ms 級ランダムアクセス**を優先。
+- **Schema-aware** compression for JSON: *structure × delta × Zstd (+ Bloom / Skip)*.  
+  構造（スキーマ）と値を分離し、**圧縮のまま exists*/pos* 検索**と**ページ粒度ランダムアクセス**を可能にします。  
+- **Design trade-off**: サイズ最小ではなく、**低I/O・低レイテンシ**（ms級）と**スキップ率≈99%**を優先。:contentReference[oaicite:2]{index=2}
 
-### Key numbers / 主要数値
-- `ratio_see[str]` ≈ **0.168–0.170**, `ratio_see[combined]` ≈ **0.194–0.196**  
-- Bloom density ≈ **0.30** / Skip: present ≈ **0.99**, absent ≈ **0.992**  
-- Lookup (ms): present **0.18 / 0.28 / 0.37** (p50/p95/p99), absent **~1.2–2.4**
+**Key numbers / 主要KPI（demo）**  
+- Size (combined): **≈19.5% of raw**  
+- Lookup present (ms): **p50 ≈ 0.18 / p95 ≈ 0.28 / p99 ≈ 0.34**  
+- Skip ratio: **present ≈0.99 / absent ≈0.992**, Bloom density ≈0.30  
+（データ特性・ページ/辞書ヒューリスティクスに依存）:contentReference[oaicite:3]{index=3}
 
-*(numbers are from the included demo metrics; see ZIP → `samples/quick_demo.py` output)*
-
----
-
-## ROI (quick math) / 迅速な ROI 試算
-`Savings/TB = (1 − 0.195) × Price_per_GB × 1000`  
-**Example / 例:** Price_per_GB = **$0.05** ⇒ **$40.25 / TB** 削減。  
-Use your egress/storage price and monthly TB to estimate **monthly savings**.  
-自社の単価と月間 TB に当てはめて **月次削減額**を即算出できます。
+**ROI quick math / 簡易ROI**  
+`Savings/TB = (1 − 0.195) × Price_per_GB × 1000`（例：$0.05/GB → ≈$40/TB, $0.25/GB → ≈$200/TB）:contentReference[oaicite:4]{index=4}
 
 ---
 
-## What’s in the release ZIP? / ZIP の内容
-- **Wheel (`.whl`)** for Windows x64 (abi3 / Python 3.8+)  
-- **Samples**: `quick_demo.py`, `quick_bench.py`（KPI と p50/p95/p99 を表示）  
-- **Metrics**: apples/lookup summaries, OnePager (PDF)  
-- **Tools**: `verify_checksums.ps1`（展開後のハッシュ検証）
+## Try in 10 min  / 10分で検証する  <a id="try-in-10-min"></a>
+1. **Download** Demo ZIP (JP/EN) from the latest **Release**. / リリースから **Demo ZIP** をDL  
+2. ZIP 内 **README_FIRST.md** の手順に従う（`pip install` 等、すべて記載）  
+3. `python samples/quick_demo.py` を実行 → **KPI**（ratio/skip/bloom, p50/p95/p99）を表示  
 
-> Install & run steps are all in **`README_FIRST.md`** inside the ZIP.  
-> インストールと実行手順はすべて **ZIP 内 `README_FIRST.md`** に記載。
+**Integrity**: verify `SHA256SUMS.txt` → `tools/verify_checksums.ps1` でもOK。:contentReference[oaicite:5]{index=5}
 
 ---
 
-## Enterprise / NDA
-- For enterprise evaluation under NDA (VDR access, deeper internals), open a thread in **Discussions → “Enterprise (NDA inquiry)”**.  
-- 企業での評価（NDA / VDR）をご希望の場合は **Discussions → “Enterprise (NDA inquiry)”** へスレッドを作成してください。
+## Why SEE is necessary (vs. Zstd-only) / SEE が“必要”な理由
+- **Zstd-only** はサイズはさらに小さいことがあるが、**検索・位置参照ができない**ため、結局**解凍＋JSONパース**で **I/O/CPU/遅延**が嵩む。  
+- **SEE** はサイズを少しだけ犠牲にして、**圧縮のまま検索（exists*/pos*）＋ランダムアクセス**を提供。**I/O削減 × CPU削減**で**総コスト（TCO）**が下がる。  
+- クラウドの**エグレス/ストレージ**と**CPU**の双方に効くので、**FinOps**に直結。:contentReference[oaicite:6]{index=6}
 
 ---
 
-## Notes / 補足
-- Zstd-only can be smaller in size, but SEE’s value is **searchability + low-I/O lookups**.  
-  Zstd 単体の方がサイズは小さい場合がありますが、SEE は **検索可能性**と**低 I/O ルックアップ**を重視します。
-- KPIs can vary with data characteristics and page/dictionary heuristics.  
-  データ特性やページ/辞書ヒューリスティクスにより KPI は変動します。
+## FAQ（short）
+- **Q: サイズが Zstd より大きくなるのでは？**  
+  A: 場合によりあり。その代わり **ms級のlookups** と **skip≈99%** を得ます。大規模I/OとCPUが支配的なワークロードでは **TCO が下がる**前提です。:contentReference[oaicite:7]{index=7}
+- **Q: どんなデータに効きやすい？**  
+  A: **繰り返し構造のJSON/NDJSON**（ログ/イベント/メトリクス/テレメトリ等）。  
+- **Q: 再現はどれくらいで？**  
+  A: **10分程度**（Demo ZIP 付属の `README_FIRST.md` と `quick_demo.py` 参照）。:contentReference[oaicite:8]{index=8}
+- **Q: NDA / VDR？**  
+  A: **Discussions → Enterprise (NDA inquiry)** より。*Under NDA: VDR pack available.*
 
 ---
+
+## What’s in the release ZIP? / ZIP には何が入っている？
+- Wheel (.whl), **Demo**: `samples/quick_demo.py`, `quick_bench.py`（KPI出力）  
+- **OnePager (PDF)**, metrics summaries, `tools/verify_checksums.ps1`  
+- 手順は **ZIP 内 README_FIRST.md** に統一。:contentReference[oaicite:9]{index=9}
+
+---
+
+## Links
+- **Docs / Site**: https://kodomonocc1.github.io/see_proto/  
+- **Latest Release (Demo ZIP + Wheel + OnePager + SHA256)**: https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0  
+- **Enterprise (NDA inquiry)**: https://github.com/kodomonocch1/see_proto/discussions/categories/enterprise-nda-inquiry
