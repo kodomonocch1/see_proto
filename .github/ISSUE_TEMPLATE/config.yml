@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Enterprise / NDA inquiry (private form)
+  - name: NDA / VDR (private form)
     url: https://docs.google.com/forms/d/e/1FAIpQLScV2Ti592K3Za2r_WLUd0E6xSvCEVnlEOxYd6OGgbpJm0ADlg/viewform?usp=header
-    about: "Company email only; no confidential data. 48h response SLA. / 会社メールでご連絡ください（機密送信不可・48h以内に返信）"
-  - name: General Q&A (public)
+    about: Private channel for enterprise/under-NDA discussions.
+  - name: Q&A / General Discussion
     url: https://github.com/kodomonocch1/see_proto/discussions/categories/q-a
-    about: "Non-confidential technical questions (public) / 機密を含まない技術質問（公開）"
+    about: Public Q&A. Please do NOT include company names or secrets.
