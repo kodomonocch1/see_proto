@@ -1,26 +1,31 @@
-name: signal-star
+name: signal: star
+
 on:
-  watch: { types: [started] }   # Star されたら起動
+  watch:
+    types: [started]
+
+permissions:
+  contents: write
+
 jobs:
-  log:
+  append_star_csv:
     runs-on: ubuntu-latest
-    permissions: { contents: write, issues: write }
     steps:
       - uses: actions/checkout@v4
-      - run: |
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Append to signals/stars.csv
+        run: |
           mkdir -p signals
-          echo "$(date -u +'%FT%TZ'),${{ github.actor }}" >> signals/stars.csv
+          TS=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          USER="${{ github.actor }}"
+          echo "${TS},${USER}" >> signals/stars.csv
+
+      - name: Commit and push
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add signals/stars.csv
-          git commit -m "signal: star by ${{ github.actor }}" || echo "no changes"
+          git commit -m "signal: star by ${{ github.actor }}"
           git push
-      - uses: actions/github-script@v7
-        with:
-          script: |
-            await github.rest.issues.create({
-              owner: context.repo.owner, repo: context.repo.repo,
-              title: `Signal: ⭐ by ${context.actor}`,
-              body: `https://github.com/${context.actor}\n次: 本人特定→非営業1通`,
-              labels: ['signal','star']
-            });
