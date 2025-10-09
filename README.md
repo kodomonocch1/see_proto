@@ -39,12 +39,13 @@
 
 ---
 
-## Try in 10 min  / 10分で検証する  <a id="try-in-10-min"></a>
-1. **Download** the Demo ZIP from the latest **Release**. / リリースから **Demo ZIP** をDL  
-2. Inside the ZIP, follow **README_FIRST.md** (includes `pip install`, env, steps).  
-   ZIP 内の **README_FIRST.md** に従ってセットアップします（`pip install` 等を記載）。  
-3. Run `python samples/quick_demo.py` → It prints **KPI** (ratio/skip/bloom, p50/p95/p99).  
-   `python samples/quick_demo.py` を実行 → **KPI**（ratio/skip/bloom, p50/p95/p99）を出力します。
+**Try in 10 minutes** → run `python samples/quick_demo.py` (prints ratio/skip/bloom + p50/p95/p99)  
+**Download (Demo ZIP / Wheel / OnePager)** → see **Release v0.1.0**  
+**Enterprise / NDA (private form)** → request VDR access here
+
+KPI (demo): combined ≈ **19.5%**, lookup **p50 ≈ 0.18 ms**, skip ≈ **99%**, bloom ≈ **0.30**.
+*Tradeoff:* not always smaller than Zstd, but stays **searchable while compressed** → lower **I/O & CPU**.
+
 
 **Integrity / 整合性確認**  
 Verify `SHA256SUMS.txt` (or run `tools/verify_checksums.ps1`).  
@@ -69,6 +70,8 @@ Verify `SHA256SUMS.txt` (or run `tools/verify_checksums.ps1`).
   **向くデータ** → 繰り返し構造の **JSON/NDJSON**（ログ/イベント/テレメトリ/メトリクス）。
 - **Q. How long to reproduce?** → About **10 minutes** with the Demo ZIP.  
   **再現時間** → **約10分**（Demo ZIP 付属の手順どおり）。
+- **Index separately instead?** Extra index = extra I/O/space + consistency risk. SEE bakes searchability into storage, cutting random I/O and parse work.
+- **Real data fit?** Repetitive JSON/NDJSON (logs/events/telemetry). Demo prints full KPIs; tweak bloom density (0.25–0.55) to match your pattern.
 
 ---
 
