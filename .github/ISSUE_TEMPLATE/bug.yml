@@ -1,0 +1,14 @@
+name: Bug report
+description: Public only (no secrets). Company names / datasets are not allowed.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "**Public repo** — Do NOT include company names / confidential data."
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps
+      placeholder: steps / command / expected vs actual
+    validations:
+      required: true
