@@ -28,6 +28,8 @@
 * Lookup present (ms): **p50 ≈ 0.18 / p95 ≈ 0.28 / p99 ≈ 0.34**
 * Skip ratio: **present ≈ 0.99 / absent ≈ 0.992**, Bloom density ≈ **0.30**
 
+<img width="587" height="824" alt="スクリーンショット 2025-10-06 005753" src="https://github.com/user-attachments/assets/f59aed13-6691-4586-b81a-d932beff3510" />
+
 ### ROI quick math
 
 `Savings/TB = (1 − 0.195) × Price_per_GB × 1000`
