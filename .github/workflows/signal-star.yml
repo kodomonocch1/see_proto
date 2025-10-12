@@ -1,4 +1,4 @@
-name: signal: star
+name: "signal: star"
 
 on:
   watch:
@@ -18,7 +18,7 @@ jobs:
       - name: Append to signals/stars.csv
         run: |
           mkdir -p signals
-          TS=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          TS=$(date -u "+%Y-%m-%dT%H:%M:%SZ")
           USER="${{ github.actor }}"
           echo "${TS},${USER}" >> signals/stars.csv
 
@@ -27,5 +27,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add signals/stars.csv
-          git commit -m "signal: star by ${{ github.actor }}"
+          git commit -m "signal: star by ${{ github.actor }}" || echo "No changes to commit"
           git push
