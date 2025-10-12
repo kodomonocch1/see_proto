@@ -109,6 +109,19 @@ Prints compression ratio, skip rate, Bloom density, and lookup latency (p50/p95/
 > **Note:** The GitHub Discussions “Enterprise (NDA)” category is **public**.
 > Do **not** post confidential information or emails there — use the **private form** above.
 
+## 🔗 Official Links & Profiles
+
+- 🧠 **Deep Dive (Medium):** [The Hidden Cloud Tax and the Schema-Aware Revolution](https://medium.com/@tetsutetsu11/the-hidden-cloud-tax-and-the-schema-aware-revolution-46b5038c57b8)
+- 💻 **Developer Article (DEV.to):** [Making JSON Compression Searchable — SEE (Schema-Aware Encoding)](https://dev.to/kodomonocch1/making-json-compression-searchable-see-schema-aware-encoding-4ojk)
+- 🎞️ **Slides (SpeakerDeck):** [SEE — The Hidden Cloud Tax Breaker: Schema-Aware Compression Beyond Zstd](https://speakerdeck.com/tetsu05/see-the-hidden-cloud-tax-breaker-schema-aware-compression-beyond-zstd)
+- 🔗 **LinkedIn (Tetsuro Kawamoto):** [Connect on LinkedIn](https://www.linkedin.com/in/%E5%BE%B9%E9%83%8E-%E6%B2%B3%E6%9C%AC-114907388/)
+
+---
+
+📬 *If you're interested in schema-aware compression, reproducible benchmarks, or potential collaboration, feel free to connect via LinkedIn.*
+
+> From Bytes to Balance Sheets — **SEE (Semantic Entropy Encoding)**
+
 ---
 
 ## Optional: For reproducibility or citation
