@@ -1,5 +1,6 @@
 <img width="1024" height="769" alt="Gemini_Generated_Image_d3bprvd3bprvd3bp (1)" src="https://github.com/user-attachments/assets/46bb4890-94c8-41ac-b9bd-8be3d531c7b3" />
-## SEE — Searchable JSON Compression (Semantic Entropy Encoding)
+
+### SEE — Searchable JSON Compression (Semantic Entropy Encoding)
 
 **combined ≈ 19.5% • lookup p50 ≈ 0.18 ms • skip ≈ 99%**
 
