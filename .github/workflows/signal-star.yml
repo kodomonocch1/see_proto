@@ -1,31 +1,35 @@
-name: "signal: star"
+name: "signal: star (private log)"
 
 on:
   watch:
     types: [started]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  append_star_csv:
+  append_private_log:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Append to signals/stars.csv
+      - name: Prepare vars
         run: |
-          mkdir -p signals
-          TS=$(date -u "+%Y-%m-%dT%H:%M:%SZ")
-          USER="${{ github.actor }}"
-          echo "${TS},${USER}" >> signals/stars.csv
+          echo "TS=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_ENV
+          echo "ACTOR=${{ github.actor }}" >> $GITHUB_ENV
+          echo "REPO=${{ github.repository }}" >> $GITHUB_ENV
 
-      - name: Commit and push
+      - name: Clone private signals repo
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add signals/stars.csv
-          git commit -m "signal: star by ${{ github.actor }}" || echo "No changes to commit"
-          git push
+          git clone https://x-access-token:${{ secrets.SIGNALS_PAT }}@github.com/${{ secrets.SIGNALS_REPO }} signals_repo
+          cd signals_repo
+          git config user.name "signals-bot"
+          git config user.email "signals-bot@users.noreply.github.com"
+          mkdir -p stars
+          touch stars/stars.csv
+
+      - name: Append row and push
+        run: |
+          cd signals_repo
+          echo "${TS},${ACTOR},${REPO}" >> stars/stars.csv
+          git add stars/stars.csv
+          git commit -m "star: ${ACTOR} on ${REPO} at ${TS}" || echo "No changes"
+          git push origin "${{ secrets.SIGNALS_BRANCH || 'main' }}"
