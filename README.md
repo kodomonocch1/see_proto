@@ -99,6 +99,41 @@ Prints compression ratio, skip rate, Bloom density, and lookup latency (p50/p95/
 * **README_FIRST.md** — concise reproduction guide
 
 ---
+## 📦 VDR (Virtual Data Room) — Evaluation Package
+
+**What it is**  
+The SEE **VDR** is a **private, NDA-only evaluation bundle** that lets third parties reproduce our key KPIs on their own machine:
+- **Compression:** combined size ≈ *~19.5% of raw*
+- **Lookup latency:** p50 ≈ *~0.18 ms*
+- **Skipping:** *~99%* page-level skip
+
+**What it contains (high level)**  
+- Sample **`.see` artifacts** with minimal metadata (for reproducible tests)  
+- A **prebuilt evaluation wheel** (binary-only) for quick local runs  
+- **KPI summaries** (CSV/JSON) and a frozen **results snapshot**  
+- Simple **verification scripts** (checksums / quality-gate)  
+- A concise **One-Pager** and evaluator **README**
+
+> ℹ️ Implementation details (core algorithms, dictionaries, low-level parameters) remain **proprietary** and are **not** disclosed in this repository.
+
+**Access policy**  
+- Distributed **on request under NDA** (no public download).  
+- To request access, please contact us via **LinkedIn** (see [Official Links & Profiles](#-official-links--profiles)) with the subject: **“SEE VDR Access”**.  
+- Redistribution, reverse engineering, and public benchmarking of VDR binaries are **prohibited**.  
+- An **Evaluation EULA** applies in addition to the NDA.
+
+**How evaluators use it (under NDA)**  
+1. Verify package integrity (checksums script).  
+2. Install the provided evaluation wheel into a clean virtual environment.  
+3. Run the 10-minute demo to print **ratio / skip / bloom / p50–p99**.  
+4. Compare local output with the included **KPI snapshot** (apples-to-apples).
+
+**Why VDR?**  
+- Ensures **reproducible, verifiable** numbers without exposing the core IP.  
+- Shortens technical diligence for **FinOps / M&A / platform** teams while keeping trade secrets protected.
+
+> If you only need the public demo, see the repository’s samples and Release assets.  
+> The **VDR is reserved for formal evaluations** (NDA) that require deeper verification.
 
 ## Links
 
