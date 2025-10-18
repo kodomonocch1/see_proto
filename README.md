@@ -63,6 +63,11 @@ Prints compression ratio, skip rate, Bloom density, and lookup latency (p50/p95/
 
 ---
 
+> **Questions / feedback?**  
+> Prefer **DMs** over email — I’m happy to answer quick questions via  
+> **LinkedIn** (preferred): <https://www.linkedin.com/in/tetsuro-kawamoto-114907388/> · **X/Twitter**: <https://x.com/kamikakusi0001>  
+> *Please don’t share confidential data in public issues or discussions.*
+
 ## Why SEE vs Zstd-only?
 
 * **Zstd-only** can be smaller, but not **searchable**; you still pay **I/O + CPU** to decompress and parse JSON.
@@ -116,13 +121,18 @@ The SEE **VDR** is a **private, NDA-only evaluation bundle** that lets third par
 
 > ℹ️ Implementation details (core algorithms, dictionaries, low-level parameters) remain **proprietary** and are **not** disclosed in this repository.
 
+> **Before requesting NDA:**  
+> If you’re exploring whether SEE fits your workload, feel free to **DM me first** on  
+> **LinkedIn**: <https://www.linkedin.com/in/tetsuro-kawamoto-114907388/> or **X/Twitter**: <https://x.com/kamikakusi0001>.  
+> I can help map your use case to the public demo (10-min repro) and share the right next steps.
+
 **Access policy**  
 - Distributed **on request under NDA** (no public download).  
 - To request access, please contact us via **LinkedIn** (see [Official Links & Profiles](#-official-links--profiles)) with the subject: **“SEE VDR Access”**.  
 - Redistribution, reverse engineering, and public benchmarking of VDR binaries are **prohibited**.  
 - An **Evaluation EULA** applies in addition to the NDA.
 
-**How evaluators use it (under NDA)**  
+**How evaluators use it **  
 1. Verify package integrity (checksums script).  
 2. Install the provided evaluation wheel into a clean virtual environment.  
 3. Run the 10-minute demo to print **ratio / skip / bloom / p50–p99**.  
@@ -137,11 +147,11 @@ The SEE **VDR** is a **private, NDA-only evaluation bundle** that lets third par
 
 ## Links
 
-* **Docs / Site:** [https://kodomonocc1.github.io/see_proto/](https://kodomonocc1.github.io/see_proto/)
+* **Docs / Site:** [https://kodomonocc1.github.io/see_proto/](https://kodomonocch1.github.io/see_proto/)
 * **Latest Release (Demo ZIP + Wheel + OnePager + SHA256):** [https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0](https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0)
 * **Enterprise / NDA contact (private):** [https://docs.google.com/forms/d/e/1FAIpQLScV2Ti592K3Za2r_WLUd0E6xSvCEVnlEOxYd6OGgbpJm0ADlg/viewform?usp=header](https://docs.google.com/forms/d/e/1FAIpQLScV2Ti592K3Za2r_WLUd0E6xSvCEVnlEOxYd6OGgbpJm0ADlg/viewform?usp=header)
 
-> **Note:** The GitHub Discussions “Enterprise (NDA)” category is **public**.
+> Optional: GitHub Discussions are public. Do not post confidential information.
 > Do **not** post confidential information or emails there — use the **private form** above.
 
 ## 🔗 Official Links & Profiles
@@ -159,9 +169,14 @@ The SEE **VDR** is a **private, NDA-only evaluation bundle** that lets third par
 
 ---
 
-## Optional: For reproducibility or citation
+## 📨 Contact & Questions
+For non-confidential questions, please **DM** me:
 
-If you reproduce benchmarks or use SEE in your research, please cite:
+- **LinkedIn (preferred):** <https://www.linkedin.com/in/tetsuro-kawamoto-114907388/>  
+- **X/Twitter:** <https://x.com/kamikakusi0001>
+
+For formal evaluations, use the **NDA/VDR form** after our DM:
+https://docs.google.com/forms/d/e/1FAIpQLScV2Ti592K3Za2r_WLUd0E6xSvCEVnlEOxYd6OGgbpJm0ADlg/viewform
 
 ```
 SEE (Semantic Entropy Encoding)
