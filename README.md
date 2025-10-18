@@ -104,6 +104,7 @@ If issues persist, open a thread in Discussions → Q&A / Repro with the full er
 > Prefer **DMs** over email — I’m happy to answer quick questions via  
 > **LinkedIn** (preferred): <https://www.linkedin.com/in/tetsuro-kawamoto-114907388/> · **X/Twitter**: <https://x.com/kamikakusi0001>  
 
+---
 
 ## Why SEE vs Zstd-only?
 
