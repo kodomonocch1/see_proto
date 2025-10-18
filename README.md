@@ -62,15 +62,52 @@ Prints compression ratio, skip rate, Bloom density, and lookup latency (p50/p95/
 **KPI (demo)**: combined ≈ **19.5%**, lookup **p50 ≈ 0.18 ms**, skip ≈ **99%**, bloom ≈ **0.30**.
 *Tradeoff:* not always smaller than Zstd, but stays **searchable while compressed**, cutting **I/O and CPU** costs.
 
+### Troubleshooting (10-min demo)
+
+If you see a `FileNotFoundError` or similar when running the demo, you’re likely **not in the expected working directory**.
+
+**Why this happens**  
+`samples/quick_demo.py` loads packaged sample files using **paths relative to the current working directory**.  
+If you execute it from somewhere else (e.g., your home directory), Python can’t find `samples/...` and fails.
+
+**Fix – pick one:**
+
+1) **Run from the repo root (unzipped folder):**
+```bash
+# macOS/Linux
+cd /path/to/see_proto
+python samples/quick_demo.py
+powershell
+コードをコピーする
+# Windows PowerShell
+cd C:\path\to\see_proto
+python samples\quick_demo.py
+Or run as a module (works from any directory):
+
+bash
+コードをコピーする
+# macOS/Linux/Windows
+python -m see_proto.samples.quick_demo
+Using -m resolves package resources without relying on your current working directory.
+
+Other common errors
+
+ModuleNotFoundError: No module named 'see_proto' → Install first: pip install see_proto (check with pip show see_proto).
+
+On Windows, if the path contains spaces, quote it:
+cd "C:\Users\You\Downloads\see_proto"
+
+If issues persist, open a thread in Discussions → Q&A / Repro with the full error message (no confidential data).
 ---
 
-> **Questions / feedback?**  
-> Prefer **DMs** over email — I’m happy to answer quick questions via  
-> **LinkedIn** (preferred): <https://www.linkedin.com/in/tetsuro-kawamoto-114907388/> · **X/Twitter**: <https://x.com/kamikakusi0001>  
 ```markdown
 > **Note:** GitHub Discussions are public. Do **not** post confidential information.
 > For formal evaluations, use the private NDA/VDR form after our DM.
 ```
+> **Questions / feedback?**  
+> Prefer **DMs** over email — I’m happy to answer quick questions via  
+> **LinkedIn** (preferred): <https://www.linkedin.com/in/tetsuro-kawamoto-114907388/> · **X/Twitter**: <https://x.com/kamikakusi0001>  
+
 
 ## Why SEE vs Zstd-only?
 
