@@ -77,15 +77,12 @@ If you execute it from somewhere else (e.g., your home directory), Python can’
 # macOS/Linux
 cd /path/to/see_proto
 python samples/quick_demo.py
-powershell
-コードをコピーする
+
 # Windows PowerShell
 cd C:\path\to\see_proto
 python samples\quick_demo.py
 Or run as a module (works from any directory):
 
-bash
-コードをコピーする
 # macOS/Linux/Windows
 python -m see_proto.samples.quick_demo
 Using -m resolves package resources without relying on your current working directory.
