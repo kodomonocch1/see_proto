@@ -42,6 +42,7 @@ Example: $0.05/GB → **≈$40/TB**, $0.25/GB → **≈$200/TB**
 ## 🔧 Try in 10 minutes <a id="try-in-10-min"></a>
 
 ```bash
+pip install see_proto
 python samples/quick_demo.py
 ```
 
@@ -66,7 +67,10 @@ Prints compression ratio, skip rate, Bloom density, and lookup latency (p50/p95/
 > **Questions / feedback?**  
 > Prefer **DMs** over email — I’m happy to answer quick questions via  
 > **LinkedIn** (preferred): <https://www.linkedin.com/in/tetsuro-kawamoto-114907388/> · **X/Twitter**: <https://x.com/kamikakusi0001>  
-> *Please don’t share confidential data in public issues or discussions.*
+```markdown
+> **Note:** GitHub Discussions are public. Do **not** post confidential information.
+> For formal evaluations, use the private NDA/VDR form after our DM.
+```
 
 ## Why SEE vs Zstd-only?
 
