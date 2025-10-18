@@ -96,7 +96,7 @@ cd "C:\Users\You\Downloads\see_proto"
 
 If issues persist, open a thread in Discussions → Q&A / Repro with the full error message (no confidential data).
 ---
-
+```
 ```markdown
 > **Note:** GitHub Discussions are public. Do **not** post confidential information.
 > For formal evaluations, use the private NDA/VDR form after our DM.
