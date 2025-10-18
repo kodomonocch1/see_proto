@@ -163,12 +163,6 @@ The SEE **VDR** is a **private, NDA-only evaluation bundle** that lets third par
 
 ---
 
-📬 *If you're interested in schema-aware compression, reproducible benchmarks, or potential collaboration, feel free to connect via LinkedIn.*
-
-> From Bytes to Balance Sheets — **SEE (Semantic Entropy Encoding)**
-
----
-
 ## 📨 Contact & Questions
 For non-confidential questions, please **DM** me:
 
