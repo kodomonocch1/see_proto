@@ -2,6 +2,10 @@
 
 ### SEE — Searchable JSON Compression (Semantic Entropy Encoding)
 
+[![PyPI - Version](https://img.shields.io/pypi/v/see_proto.svg)](https://pypi.org/project/see_proto/)
+[![Release](https://img.shields.io/github/v/release/kodomonocch1/see_proto)](https://github.com/kodomonocch1/see_proto/releases)
+[![Discussions](https://img.shields.io/github/discussions/kodomonocch1/see_proto?label=Q%26A%20%2F%20Repro)](https://github.com/kodomonocch1/see_proto/discussions)
+
 **combined ≈ 19.5% • lookup p50 ≈ 0.18 ms • skip ≈ 99%**
 
 > **Why it matters**
@@ -12,6 +16,12 @@
   <a href="https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0"><b>① Download (Release)</b></a> ・
   <a href="https://github.com/kodomonocch1/see_proto/releases/download/v0.1.0/SEE_onepager.pdf"><b>② OnePager (ROI)</b></a> ・
   <a href="#try-in-10-min"><b>③ Try in 10 minutes</b></a>
+</p>
+
+<p>
+  <a href="https://github.com/kodomonocch1/see_proto/discussions/categories/q-a"><b>🗨️ Start a Discussion (Q&A)</b></a>
+  &nbsp;•&nbsp;
+  <a href="https://github.com/kodomonocch1/see_proto/discussions/categories/benchmarks-repro"><b>📊 Benchmarks & Repro</b></a>
 </p>
 
 > **Enterprise / NDA inquiry** → <a href="https://docs.google.com/forms/d/e/1FAIpQLScV2Ti592K3Za2r_WLUd0E6xSvCEVnlEOxYd6OGgbpJm0ADlg/viewform?usp=header"><b>Private contact form</b></a>
@@ -185,7 +195,7 @@ The SEE **VDR** is a **private, NDA-only evaluation bundle** that lets third par
 
 ## Links
 
-* **Docs / Site:** [https://kodomonocc1.github.io/see_proto/](https://kodomonocch1.github.io/see_proto/)
+* **Docs / Site:** [https://kodomonocch1.github.io/see_proto/](https://kodomonocch1.github.io/see_proto/)
 * **Latest Release (Demo ZIP + Wheel + OnePager + SHA256):** [https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0](https://github.com/kodomonocch1/see_proto/releases/tag/v0.1.0)
 * **Enterprise / NDA contact (private):** [https://docs.google.com/forms/d/e/1FAIpQLScV2Ti592K3Za2r_WLUd0E6xSvCEVnlEOxYd6OGgbpJm0ADlg/viewform?usp=header](https://docs.google.com/forms/d/e/1FAIpQLScV2Ti592K3Za2r_WLUd0E6xSvCEVnlEOxYd6OGgbpJm0ADlg/viewform?usp=header)
 
