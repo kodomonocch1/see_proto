@@ -2,7 +2,6 @@
 
 ### SEE — Searchable JSON Compression (Semantic Entropy Encoding)
 
-[![PyPI - Version](https://img.shields.io/pypi/v/see_proto.svg)](https://pypi.org/project/see_proto/)
 [![Release](https://img.shields.io/github/v/release/kodomonocch1/see_proto)](https://github.com/kodomonocch1/see_proto/releases)
 [![Discussions](https://img.shields.io/github/discussions/kodomonocch1/see_proto?label=Q%26A%20%2F%20Repro)](https://github.com/kodomonocch1/see_proto/discussions)
 
