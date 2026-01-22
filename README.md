@@ -86,22 +86,23 @@ If you execute it from somewhere else (e.g., your home directory), Python can’
 # macOS/Linux
 cd /path/to/see_proto
 python samples/quick_demo.py
-
+```
+```
 # Windows PowerShell
 cd C:\path\to\see_proto
 python samples\quick_demo.py
+```
 Or run as a module (works from any directory):
 
+```
 # macOS/Linux/Windows
 python -m see_proto.samples.quick_demo
 Using -m resolves package resources without relying on your current working directory.
 
+```
 Other common errors
-
-ModuleNotFoundError: No module named 'see_proto' → Install first: pip install see_proto (check with pip show see_proto).
-
-On Windows, if the path contains spaces, quote it:
-cd "C:\Users\You\Downloads\see_proto"
+- ModuleNotFoundError … → `pip install see_proto`
+- Path contains spaces … → `cd "C:\Users\You\Downloads\see_proto"`
 
 If issues persist, open a thread in Discussions → Q&A / Repro with the full error message (no confidential data).
 ```
@@ -109,9 +110,6 @@ If issues persist, open a thread in Discussions → Q&A / Repro with the full er
 > **Note:** GitHub Discussions are public. Do **not** post confidential information.
 > For formal evaluations, use the private NDA/VDR form after our DM.
 ```
-> **Questions / feedback?**  
-> Prefer **DMs** over email — I’m happy to answer quick questions via  
-> **LinkedIn** (preferred): <https://www.linkedin.com/in/tetsuro-kawamoto-114907388/> · **X/Twitter**: <https://x.com/kamikakusi0001>  
 
 ---
 
@@ -179,7 +177,7 @@ The SEE **VDR** is a **private, NDA-only evaluation bundle** that lets third par
 - Redistribution, reverse engineering, and public benchmarking of VDR binaries are **prohibited**.  
 - An **Evaluation EULA** applies in addition to the NDA.
 
-**How evaluators use it **  
+**How evaluators use it **
 1. Verify package integrity (checksums script).  
 2. Install the provided evaluation wheel into a clean virtual environment.  
 3. Run the 10-minute demo to print **ratio / skip / bloom / p50–p99**.  
@@ -210,11 +208,6 @@ The SEE **VDR** is a **private, NDA-only evaluation bundle** that lets third par
 
 ---
 
-## 📨 Contact & Questions
-For non-confidential questions, please **DM** me:
-
-- **LinkedIn (preferred):** <https://www.linkedin.com/in/tetsuro-kawamoto-114907388/>  
-- **X/Twitter:** <https://x.com/kamikakusi0001>
 
 For formal evaluations, use the **NDA/VDR form** after our DM:
 https://docs.google.com/forms/d/e/1FAIpQLScV2Ti592K3Za2r_WLUd0E6xSvCEVnlEOxYd6OGgbpJm0ADlg/viewform
