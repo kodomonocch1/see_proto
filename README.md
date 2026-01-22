@@ -199,7 +199,7 @@ The SEE **VDR** is a **private, NDA-only evaluation bundle** that lets third par
 > Optional: GitHub Discussions are public. Do not post confidential information.
 > Do **not** post confidential information or emails there — use the **private form** above.
 
-## 🔗 Official Links & Profiles
+
 
 - 🧠 **Deep Dive (Medium):** [The Hidden Cloud Tax and the Schema-Aware Revolution](https://medium.com/@tetsutetsu11/the-hidden-cloud-tax-and-the-schema-aware-revolution-46b5038c57b8)
 - 💻 **Developer Article (DEV.to):** [Making JSON Compression Searchable — SEE (Schema-Aware Encoding)](https://dev.to/kodomonocch1/making-json-compression-searchable-see-schema-aware-encoding-4ojk)
