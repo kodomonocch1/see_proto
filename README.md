@@ -18,9 +18,9 @@
 </p>
 
 <p>
-  <a href="https://github.com/kodomonocch1/see_proto/discussions/categories/q-a"><b>🗨️ Start a Discussion (Q&A)</b></a>
+  <a href="https://github.com/kodomonocch1/see_proto/discussions/categories/q-a"><b> Start a Discussion (Q&A)</b></a>
   &nbsp;•&nbsp;
-  <a href="https://github.com/kodomonocch1/see_proto/discussions/categories/benchmarks-repro"><b>📊 Benchmarks & Repro</b></a>
+  <a href="https://github.com/kodomonocch1/see_proto/discussions/categories/benchmarks-repro"><b> Benchmarks & Repro</b></a>
 </p>
 
 ---
@@ -81,7 +81,7 @@ Example: $0.05/GB → **≈$46/TB**, $0.25/GB → **≈$231/TB**
 
 ---
 
-## 🔧 Try in 10 minutes <a id="try-in-10-min"></a>
+## Try in 10 minutes <a id="try-in-10-min"></a>
 
 ### Option A: pip (wheel)
 
