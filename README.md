@@ -1,6 +1,6 @@
-<img width="915" height="493" alt="スクリーンショット 2026-02-17 223920" src="https://github.com/user-attachments/assets/e001eb79-7619-4f08-a9d2-6de816d4e433" />
+<img width="915" height="493" alt="SEE — Searchable JSON Compression (Hero)" src="https://github.com/user-attachments/assets/e001eb79-7619-4f08-a9d2-6de816d4e433" />
 
-### SEE — Searchable JSON Compression (Semantic Entropy Encoding)
+# SEE — Searchable JSON Compression (Semantic Entropy Encoding)
 
 [![Release](https://img.shields.io/github/v/release/kodomonocch1/see_proto)](https://github.com/kodomonocch1/see_proto/releases)
 [![Discussions](https://img.shields.io/github/discussions/kodomonocch1/see_proto?label=Q%26A%20%2F%20Repro)](https://github.com/kodomonocch1/see_proto/discussions)
@@ -9,46 +9,43 @@
 
 > **Why it matters**
 > SEE reduces both the **data tax** (storage/egress) and the **CPU tax** (decompress/parse) by keeping JSON **searchable while compressed**.
-> Unlike Zstd-only, SEE supports **random access + exists/pos queries** without a separate external index.
+> Unlike Zstd-only, SEE supports **page-level random access + exists/pos/eq-style lookups** without a separate external index.
 
 <p>
   <a href="https://github.com/kodomonocch1/see_proto/releases"><b>① Download (Latest Release)</b></a> ・
-  <a href="https://github.com/kodomonocch1/see_proto/releases"><b>② Demo ZIP (10 minutes)</b></a> ・
-  <a href="#dd-pack-audit--repro"><b>③ DD Pack (Audit & Repro)</b></a>
+  <a href="#try-in-10-min"><b>② Try Demo (10 minutes)</b></a> ・
+  <a href="#dd-pack-audit--repro"><b>③ DD Pack (Audit & Repro)</b></a> ・
+  <a href="#enterprise-nda"><b>④ Enterprise / NDA inquiry</b></a>
 </p>
 
 <p>
-  <a href="https://github.com/kodomonocch1/see_proto/discussions/categories/q-a"><b> Start a Discussion (Q&A)</b></a>
+  <a href="https://github.com/kodomonocch1/see_proto/discussions/categories/q-a"><b>Start a Discussion (Q&A)</b></a>
   &nbsp;•&nbsp;
-  <a href="https://github.com/kodomonocch1/see_proto/discussions/categories/benchmarks-repro"><b> Benchmarks & Repro</b></a>
+  <a href="https://github.com/kodomonocch1/see_proto/discussions/categories/benchmarks-repro"><b>Benchmarks & Repro</b></a>
 </p>
 
 ---
 
-## Strategic acquisition / exclusive license (serious inquiries)
+## Strategic acquisition / exclusive license (serious inquiries only)
 
-SEE is being positioned as a **strategic asset** for platform teams (Infra / Data / Storage / Observability) and **CorpDev**.
+SEE is being positioned as a **strategic asset** for **Infra / Data / Storage / Observability** teams and **CorpDev**.
 
-**Evaluation policy (competition by slots, not deadlines)**  
-- **Limited NDA eval slots:** we run **up to a small number per month**, prioritized for parties with a **clear integration path**.  
-- **Proof-first (no meetings required):** the **DEMO ZIP + DD Pack** are built so your team can **verify KPIs without calls**.  
-- **Contact & filter (serious-only):** **company email preferred** for faster routing, but **personal email / LinkedIn / X DMs are welcome**.  
-  *No confidential data needed in the first message. We may decline anonymous/low-context requests.*
+**Evaluation policy (slots, not deadlines)**
+- **Limited NDA evaluation slots:** a **small number per month**, prioritized for parties with a **clear integration path**.
+- **Proof-first (no meetings required):** the **DEMO ZIP + DD Pack** are designed so your engineers can **verify KPIs without calls**.
+- **Fast filter:** **company email preferred** for correct routing. (No confidential data needed in the first message.)
 
 **What we accept**
--  **Acquisition (asset deal)**
--  **Exclusive license**
--  **Pilot under NDA** (for integration validation)
+- **Acquisition (asset deal)**
+- **Exclusive license**
+- **Pilot under NDA** (integration validation only)
 
 **How evaluation works (proof-first)**
-1) **Public DEMO (10 min):** run the demo ZIP and see the KPIs on your machine  
-2) **DD Pack (audit/repro):** verify **mismatch==0**, strict gates, and reproducibility artifacts  
+1) **Public Demo (10 min):** run the demo ZIP and see KPIs on your machine  
+2) **DD Pack (audit/repro):** verify reproducibility artifacts, strict gates, and mismatch-zero checks  
 3) **NDA / VDR:** deeper evaluation for serious integration paths
 
-**Filter (to keep it fast)**
-- Company email required (no confidential data needed).
-- **Limited evaluation slots** (to keep turnaround fast for serious parties).
-
+<a id="enterprise-nda"></a>
 > **Enterprise / NDA inquiry** → <a href="https://docs.google.com/forms/d/e/1FAIpQLScV2Ti592K3Za2r_WLUd0E6xSvCEVnlEOxYd6OGgbpJm0ADlg/viewform?usp=header"><b>Private contact form</b></a>
 
 ---
@@ -61,7 +58,7 @@ SEE is being positioned as a **strategic asset** for platform teams (Infra / Dat
 
 ## What is SEE?
 
-- **Schema-aware JSON compression:** combines *structure × delta × dictionary (+ Bloom / Skip)* to stay **searchable while compressed**, with **page-level random access**.
+- **Schema-aware JSON compression:** combines *structure × delta × dictionary (+ Bloom / skip)* to stay **searchable while compressed**, with **page-level random access**.
 - **Design trade-off:** optimizes **low I/O & low latency** and **~99% skip rate** (not only smallest bytes).
 
 ### Key metrics (latest)
@@ -70,7 +67,7 @@ SEE is being positioned as a **strategic asset** for platform teams (Infra / Dat
 - **Lookup latency (ms):**
   - present p50/p95/p99 ≈ **0.083 / 0.098 / 0.159**
   - absent  p50/p95/p99 ≈ **0.084 / 0.119 / 0.183**
-- **Skip ratio:** present ≈ **0.994**, absent ≈ **0.997**  
+- **Skip ratio:** present ≈ **0.994**, absent ≈ **0.997**
 - **Bloom density:** ≈ **0.376**
 - **Reader path:** PageDir + mini-index (default)
 
@@ -81,7 +78,8 @@ Example: $0.05/GB → **≈$46/TB**, $0.25/GB → **≈$231/TB**
 
 ---
 
-## Try in 10 minutes <a id="try-in-10-min"></a>
+<a id="try-in-10-min"></a>
+## Try in 10 minutes
 
 ### Option A: pip (wheel)
 
@@ -150,11 +148,13 @@ If issues persist, open a thread in Discussions → Q&A / Repro with the full er
 ## Why SEE vs Zstd-only?
 
 * **Zstd-only** can be smaller, but it’s not **searchable**; you still pay **I/O + CPU** to decompress and parse JSON.
-* **SEE** trades a format-aware pipeline for **millisecond lookups**, **page-level random access**, and **~99% skipping** — often lowering **TCO** even when bytes are not minimal.
+* **SEE** keeps data format-aware for **fast lookups**, **page-level random access**, and **~99% skipping** — often lowering **TCO** even when bytes are not minimal.
 
 ---
 
-## DD Pack (Audit & Repro) <a id="dd-pack-audit--repro"></a>
+<a id="dd-pack-audit--repro"></a>
+
+## DD Pack (Audit & Repro)
 
 **What it is**
 The DD pack is an **audit/repro bundle** for evaluators who need more than “a demo works”.
@@ -173,7 +173,7 @@ The DD pack is an **audit/repro bundle** for evaluators who need more than “a 
 
 The DD pack is designed so a reviewer can validate key claims **without meetings**.
 
-> Request via the **private contact form** (company email required).
+> Request via the **private contact form** (company email preferred).
 
 ---
 
@@ -198,39 +198,29 @@ The DD pack is designed so a reviewer can validate key claims **without meetings
 
 ## FAQ (short)
 
-**Q. Will it ever be larger than Zstd?**
-A. Sometimes yes; in return you get **ms lookups** and **~99% skipping**. For I/O/CPU-bound workloads, **TCO decreases**.
+**Q. Parquet is enough, right?**
+A. Parquet is great when you can enforce schema & conversion. Many pipelines emit **JSON/NDJSON by default**. SEE targets the “keep JSON but still query fast” gap, especially for archives/cold tiers.
 
-**Q. Best-fit data?**
-A. Repetitive **JSON/NDJSON** such as logs, events, telemetry, and metrics.
+**Q. Will it ever be larger than Zstd?**
+A. Sometimes yes; in return you get **ms lookups** and **~99% skipping**. For I/O/CPU-bound workloads, **TCO can decrease**.
+
+**Q. What queries does SEE support?**
+A. The focus is **exists/pos/eq-style** lookups and fast filtering without full decompression. See demo output and Discussions for current constraints.
 
 **Q. Why not build a separate index?**
 A. Separate indexes add extra I/O, space, and consistency risk. SEE keeps searchability **inside the storage format**.
-
-**Q. How to tune for different data?**
-A. Adjust Bloom density (often works well in 0.25–0.55). Demo prints all metrics for validation.
 
 ---
 
 ## Links
 
 * **Docs / Site:** [https://kodomonocch1.github.io/see_proto/](https://kodomonocch1.github.io/see_proto/)
-
 * **Latest Release:** [https://github.com/kodomonocch1/see_proto/releases](https://github.com/kodomonocch1/see_proto/releases)
-
 * **Private NDA / VDR inquiry:** [https://docs.google.com/forms/d/e/1FAIpQLScV2Ti592K3Za2r_WLUd0E6xSvCEVnlEOxYd6OGgbpJm0ADlg/viewform?usp=header](https://docs.google.com/forms/d/e/1FAIpQLScV2Ti592K3Za2r_WLUd0E6xSvCEVnlEOxYd6OGgbpJm0ADlg/viewform?usp=header)
-
 * **Deep Dive (Medium):** [https://medium.com/@tetsutetsu11/the-hidden-cloud-tax-and-the-schema-aware-revolution-46b5038c57b8](https://medium.com/@tetsutetsu11/the-hidden-cloud-tax-and-the-schema-aware-revolution-46b5038c57b8)
-
 * **Developer Article (DEV.to):** [https://dev.to/kodomonocch1/making-json-compression-searchable-see-schema-aware-encoding-4ojk](https://dev.to/kodomonocch1/making-json-compression-searchable-see-schema-aware-encoding-4ojk)
-
 * **Slides (SpeakerDeck):** [https://speakerdeck.com/tetsu05/see-the-hidden-cloud-tax-breaker-schema-aware-compression-beyond-zstd](https://speakerdeck.com/tetsu05/see-the-hidden-cloud-tax-breaker-schema-aware-compression-beyond-zstd)
 
-* **LinkedIn (Tetsuro Kawamoto):** [https://www.linkedin.com/in/tetsuro-kawamoto-114907388/](https://www.linkedin.com/in/tetsuro-kawamoto-114907388/)
-
-* **X/Twitter:** [https://x.com/kamikakusi0001](https://x.com/kamikakusi0001)
-
 > Discussions are public — do not post confidential data.
-> For serious evaluations: use the private form (company email required).
+> For serious evaluations: use the private form (company email preferred).
 
-```
